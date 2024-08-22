@@ -1,8 +1,9 @@
-// TODO: Include packages needed for this application
-const fs = require('fs');
+// Import required packages
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -35,9 +36,10 @@ const questions = [
         message: 'What are the test instructions?',
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: 'Which license are you using for this project?',
+        choices: ['MIT', 'GPLv3', 'Apache 2.0', 'BSD 3-Clause', 'None'],
     },
     {
         type: 'input',
@@ -51,7 +53,7 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) {
@@ -62,7 +64,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer.prompt(questions).then((answers) => {
         const readmeContent = generateMarkdown(answers);
@@ -70,34 +72,6 @@ function init() {
     });
 }
 
-// Function to generate markdown for README
-function generateMarkdown(data) {
-    return `
-# ${data.title}
-
-## Description
-${data.description}
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## Contributing
-${data.contributing}
-
-## Tests
-${data.tests}
-
-## License
-This project is licensed under the ${data.license} license.
-
-## Questions
-If you have any questions, you can reach me at [${data.email}](mailto:${data.email}).  
-You can also find more of my work at [${data.github}](https://github.com/${data.github}).
-    `;
-}
-
 // Function call to initialize app
 init();
+

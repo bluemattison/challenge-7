@@ -1,15 +1,25 @@
 {
-    "name": "static-site",
+    "name": "readme-generator",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "type": "module",
+    "description": "A command-line application to generate a professional README.md file from user input.",
+    "main": "src/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node src/index.js"
     },
-    "author": "",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bluemattison/challenge-7"
+    },
+    "keywords": [
+        "README",
+        "generator",
+        "markdown",
+        "nodejs",
+        "inquirer"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
     "dependencies": {
-        "inquirer": "8.2.4"
+        "inquirer": "^8.2.4"
     }
 }
