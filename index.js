@@ -1,7 +1,6 @@
-// Import required packages
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // Array of questions for user input
 const questions = [
@@ -72,6 +71,5 @@ function init() {
     });
 }
 
-// Function call to initialize app
+// Initialize app
 init();
-

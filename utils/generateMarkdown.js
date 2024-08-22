@@ -1,5 +1,5 @@
 function renderLicenseBadge(license) {
-    if (!license) {
+    if (!license || license === 'None') {
         return '';
     }
 
@@ -8,14 +8,13 @@ function renderLicenseBadge(license) {
         GPLv3: '![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)',
         'Apache 2.0': '![Apache License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)',
         'BSD 3-Clause': '![BSD 3-Clause License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)',
-        None: ''
     };
 
     return badges[license] || '';
 }
 
 function renderLicenseLink(license) {
-    if (!license) {
+    if (!license || license === 'None') {
         return '';
     }
 
@@ -24,7 +23,6 @@ function renderLicenseLink(license) {
         GPLv3: 'https://www.gnu.org/licenses/gpl-3.0',
         'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
         'BSD 3-Clause': 'https://opensource.org/licenses/BSD-3-Clause',
-        None: ''
     };
 
     return links[license] || '';
